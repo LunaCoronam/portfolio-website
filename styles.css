@@ -1,44 +1,42 @@
-/* Dark Theme */
+/* Dark Theme Portfolio Styles */
+
+
+/* Global */
 body {
 margin: 0;
-font-family: Arial, sans-serif;
-background-color: #000;
-color: #fff;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #0c0c0c; /* DARK background */
+color: white; /* Main text color */
 }
 
 
+/* Navigation */
 nav {
-background: #111;
-padding: 15px 0;
-border-bottom: 2px solid #ff7b00;
-}
-
-
-nav ul {
-list-style: none;
+background-color: #000000;
+padding: 20px;
 display: flex;
 justify-content: center;
 gap: 40px;
-margin: 0;
-padding: 0;
 }
 
 
 nav a {
-color: white;
+color: #ffffff;
 text-decoration: none;
 font-size: 18px;
-font-weight: bold;
-transition: color 0.2s;
+font-weight: 500;
+transition: color 0.2s ease;
 }
 
 
 nav a:hover,
 nav a.active {
-color: #ff7b00;
+color: #ff8c42; /* Orange highlight */
 }
 
 
+/* Hero Section */
 .hero {
 text-align: center;
 padding: 120px 20px;
@@ -51,21 +49,36 @@ margin-bottom: 10px;
 }
 
 
-.hero h2 {
-font-size: 32px;
-color: #ff7b00;
-margin-bottom: 20px;
+.hero p {
+font-size: 24px;
+color: #ff8c42;
 }
 
 
-.content {
-max-width: 900px;
+/* Page Layout */
+.page {
+max-width: 800px;
 margin: 60px auto;
-padding: 0 20px;
+padding: 20px;
 }
 
 
-.content h1 {
-border-left: 4px solid #ff7b00;
-padding-left: 10px;
+/* Panels */
+.panel {
+background-color: #1a1a1a;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #333;
+}
+
+
+/* Lists */
+ul li {
+margin: 10px 0;
+}
+
+
+/* Blog List */
+.blog-list a {
+color: #ff8c42;
 }
