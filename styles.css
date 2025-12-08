@@ -46,12 +46,18 @@ padding: 120px 20px;
 .hero h1 {
 font-size: 64px;
 margin-bottom: 10px;
+color: #ff8c42;
+}
+
+.hero h2 {
+font-size: 32px;
+margin-bottom: 10px;
+color: #b8342a;
 }
 
 
 .hero p {
 font-size: 24px;
-color: #ff8c42;
 }
 
 
