@@ -133,8 +133,8 @@ nav a.active::after {
 /* Make embedded iframes behave consistently */
 .project-card iframe {
   display: block;
-  width: 100%;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  
 }
 
 /* ------------------------------ */
