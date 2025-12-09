@@ -14,7 +14,7 @@
 <script>
 function toggleSection(id) {
   const section = document.getElementById(id);
-  section.style.display = section.style.display === "block" ? "none" : "block";
+  section.classList.toggle("open");
 }
 </script>
 
@@ -29,9 +29,6 @@ function toggleSection(id) {
 </nav>
 </header>
 
-<main class="page">
-<h1>Projects</h1>
-
 <!-- ===================== -->
 <!-- TABLE OF CONTENTS -->
 <!-- ===================== -->
@@ -43,7 +40,8 @@ function toggleSection(id) {
   </ul>
 </div>
 
-
+<main class="page">
+<h1>Projects</h1>
 
 <!-- ===================== -->
 <!-- WARDEN'S WILL SECTION -->

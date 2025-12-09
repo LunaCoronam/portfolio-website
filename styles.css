@@ -208,6 +208,8 @@ img.small {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 350px;
+  border-radius: 8px;
 }
 
 .feature-image img {
@@ -223,28 +225,50 @@ img.small {
   margin: 20px 0;
   border-radius: 6px;
 }
+/* === TOC on left black background === */
 .toc {
-  background: #111;
-  padding: 15px 20px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  margin-bottom: 40px;
+  position: fixed;
+  left: 40px;          /* distance from left side — tweak this! */
+  top: 140px;          /* adjusts vertical placement */
+  width: 180px;
+  padding: 0;
+  background: none;
 }
+
 .toc h3 {
-  margin-top: 0;
   color: #ff8c42;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
+
 .toc ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
 }
+
+.toc li {
+  margin-bottom: 10px;
+}
+
 .toc a {
   color: #ff8c42;
   text-decoration: none;
+  font-size: 15px;
 }
-.collapsible {
-  display: none;
-  margin-top: 20px;
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+/* Prevent overlap on small screens */
+@media(max-width: 900px) {
+  .toc {
+    position: static;
+    width: 100%;
+    margin: 20px 0;
+    padding-left: 10px;
+  }
 }
 
 .collapse-btn {
@@ -261,33 +285,37 @@ img.small {
 .collapse-btn:hover {
   background: #ffa866;
 }
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.collapsible.open {
+  max-height: 2000px; /* comfortably large */
+}
+
 .feature-block {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;       /* vertically center text + image */
+  justify-content: center;   /* horizontally center the pair */
   gap: 20px;
-  margin: 30px 0;
-  padding: 20px;
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 8px;
+  margin: 40px 0;
 }
 
-.feature-block.alt-1 .feature-text {
-  order: 1;
-}
-.feature-block.alt-1 .feature-image {
-  order: 2;
+
+.feature-block.alt-1 {
+  flex-direction: row;       /* text left, image right */
 }
 
-.feature-block.alt-2 .feature-image {
-  order: 1;
+.feature-block.alt-2 {
+  flex-direction: row-reverse; /* image left, text right */
 }
-.feature-block.alt-2 .feature-text {
-  order: 2;
-}
+
 
 .feature-text, .feature-image {
   flex: 1 1 300px;
+  max-width: 450px;
 }
 
 .feature-text h3 {
@@ -303,4 +331,69 @@ img.small {
   display: block;
   width: 100%;
   margin: 1rem 0;
+}
+/* === Projects page: left sidebar TOC (minimal change) === */
+.page {
+  /* ensure layout can handle a floated sidebar */
+  max-width: 1000px; /* give slightly more room for sidebar + content */
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Make TOC a left column without changing HTML structure */
+.toc {
+  float: left;
+  width: 200px;           /* sidebar width — change if you want wider/narrower */
+  margin-right: 28px;     /* space between TOC and the main content */
+  position: sticky;
+  top: 100px;             /* keeps it visible as reader scrolls */
+  align-self: flex-start;
+  background: transparent; /* keeps your dark theme look */
+  border: none;
+  padding: 0;
+}
+
+/* Make sure the TOC items look neat */
+.toc h3 {
+  margin: 0 0 10px 0;
+  color: #ff8c42;
+  font-size: 15px;
+}
+.toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toc li {
+  margin-bottom: 10px;
+}
+.toc a {
+  color: #ff8c42;
+  text-decoration: none;
+  font-size: 15px;
+}
+.toc a:hover {
+  text-decoration: underline;
+}
+
+/* Clear float after the main content so footer and following sections behave normally */
+.page::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* MOBILE: revert to normal flow on small screens */
+@media (max-width: 800px) {
+  .toc {
+    float: none;
+    position: static;
+    width: 100%;
+    margin: 0 0 20px 0;
+    top: auto;
+  }
+  .page {
+    padding: 12px;
+    margin: 20px auto;
+  }
 }
