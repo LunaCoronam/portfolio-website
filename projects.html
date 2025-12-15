@@ -12,11 +12,14 @@
 <!-- Javascript for Collapsibles -->
 <!-- ===================== -->
 <script>
-function toggleSection(id) {
+function toggleSection(id, btn) {
   const section = document.getElementById(id);
-  section.classList.toggle("open");
+  const isOpen = section.classList.toggle("open");
+
+  btn.textContent = isOpen ? "Show Less" : "Show More";
 }
 </script>
+
 
 <body>
 
@@ -56,7 +59,10 @@ function toggleSection(id) {
           frameborder="0" width="100%" height="190"></iframe>
 
   <!-- COLLAPSE BUTTON -->
-  <button class="collapse-btn" onclick="toggleSection('ww-details')">Show More</button>
+<button class="collapse-btn"
+        onclick="toggleSection('ww-details', this)">
+  Show More
+</button>
 
   <!-- COLLAPSIBLE CONTENT -->
   <div id="ww-details" class="collapsible">
@@ -140,7 +146,11 @@ function toggleSection(id) {
 </iframe>
 
   <!-- COLLAPSE BUTTON -->
-  <button class="collapse-btn" onclick="toggleSection('yd-details')">Show More</button>
+ <button class="collapse-btn"
+        onclick="toggleSection('yd-details', this)">
+  Show More
+</button>
+
 
   <!-- COLLAPSIBLE CONTENT -->
   <div id="yd-details" class="collapsible">
@@ -188,7 +198,11 @@ function toggleSection(id) {
   <p>A casual mobile game where players catch slimes with a vacuum, refine slimes into gold, and complete fun challenges to expand their island.</p>
 
     <!-- COLLAPSE BUTTON -->
-  <button class="collapse-btn" onclick="toggleSection('sf-details')">Show More</button>
+  <button class="collapse-btn"
+        onclick="toggleSection('sf-details', this)">
+  Show More
+</button>
+
 
   <!-- COLLAPSIBLE CONTENT -->
   <div id="sf-details" class="collapsible">
